@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Configuracao da conexao com a base de dados -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/bd_stock?useSSL=false</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+
+		<!-- O Pool de conexoes JDBC -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL diaecto -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+		<!-- gerenciamento de sessao -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- desabilita o cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Exibe os comandos SQL -->
+		<property name="show_sql">true</property>
+
+		<!-- Cria as tabelas -->
+		<!-- UPDATE para actualizar a BD sem apagar as tabelas existentes -->
+		<!-- CREATE para apagar as tabelas existentes e voltar a criar novamente -->
+		<!-- VALIDATE apenas para validar a BD, inserindo dados -->
+		<property name="hbm2ddl.auto">validade</property>
+		
+		<mapping class="mz.ciuem.stock.domain.Categoria" />
+		<mapping class="mz.ciuem.stock.domain.Departamento" />
+		<mapping class="mz.ciuem.stock.domain.EntradaProdutos" />
+		<mapping class="mz.ciuem.stock.domain.Produto" />
+		<mapping class="mz.ciuem.stock.domain.Requisicao"/> 
+	
+	</session-factory>
+
+</hibernate-configuration>

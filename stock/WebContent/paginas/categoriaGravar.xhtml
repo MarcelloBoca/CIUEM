@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<ui:composition template="/templates/modeloGeral.xhtml">
+		<ui:define name="conteudo">
+			<h:form>
+				<p:toolbar>
+					<f:facet name="left">
+						<h:outputText value="Categoria" />
+					</f:facet>
+				</p:toolbar>
+				
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Codigo"/>
+					<p:inputText readonly="true" size="10" value="#{categoriaBean.categoriaGravar.codigo}"/>
+					
+					<p:outputLabel value="Designação"/>
+					<p:inputText maxlength="50" size="30" value="#{categoriaBean.categoriaGravar.designacao"/>
+				</h:panelGrid>
+				
+				<h:panelGrid columns="3">
+				    <p:commandButton value="Novo"/> 
+					<p:commandButton value="Salvar" actionListener="#{categoriaBean.salvar}" update=":msgGlobal"/>
+					<p:commandButton value="Voltar" action = "/paginas/categoriaPesquisa.xhtml?faces-redirect=true"/>
+				</h:panelGrid>
+		
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</html>

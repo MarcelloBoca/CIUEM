@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Sistema de Gestao de Stock</title>
+</h:head>
+<h:body>
+		<p:growl id="msgGlobal" />
+		<p:layout fullPage="true">
+			<p:layoutUnit header="SISTEMA DE GESTÃO DE STOCK" position="north"
+				closable="false" collapsible="false" resizable="false"></p:layoutUnit>
+
+			<p:layoutUnit size="250" position="west" closable="false"
+				collapsible="true" resizable="false">
+				<h:form>
+					<p:panelMenu>
+
+						<p:submenu label="Parametrização">
+							<p:menuitem value="Registar Departamento" outcome="/paginas/departamentoPesquisa.xhtml" />
+							<p:menuitem value="Registar Categoria" outcome="/paginas/categoriaPesquisa.xhtml " />
+						</p:submenu>
+
+						<p:submenu label="Produtos" >
+							<p:menuitem value="Registar Produtos" />
+							<p:menuitem value="Registar Entrada de Produtos" />
+						</p:submenu>
+
+						<p:submenu label="Requisições" >
+							<p:menuitem value="Fazer Requisição" />
+							<p:menuitem value="Confirmar Requisição" />
+						</p:submenu>
+						<p:submenu label="Relatórios" />
+
+					</p:panelMenu>
+				</h:form>
+
+			</p:layoutUnit>
+			<p:layoutUnit position="center" closable="false" collapsible="false"
+				resizable="false">
+				<ui:insert name="conteudo" />
+			</p:layoutUnit>
+			<p:layoutUnit position="south" header="&copy; "></p:layoutUnit>
+		</p:layout>
+</h:body>
+</html>
